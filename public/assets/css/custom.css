@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400 !important;
+}
+p, span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400 !important;
+}
+.sidebar-theme #compactSidebar {
+    background: #3c3e5d;
+}
+.sidebar-wrapper #compactSidebar .menu-categories a.menu-toggle[data-active="true"] .base-menu span {
+    color: #fafafa;
+}
+.sidebar-wrapper #compactSidebar .menu-categories a.menu-toggle[data-active="true"] .base-icons svg {
+    color: #fafafa;
+}
+#colorPallet {
+    display: none;
+}
+.table-responsive .row {
+    width: 100% !important;
+}
+.dataTables_length, .dataTables_filter {
+    padding-bottom: 15px !important;
+}
+.layout-top-spacing {
+    margin-top: 5px !important;
+}
+.paginate_button {
+    padding: 4px;
+    border: 1px solid #3b3f5cad;
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 35px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-inline label {
+    justify-content: stretch;
+}
+#table button, #table_length select, .dataTables_filter svg {
+    margin-right: 8px;
+}
+
+.sidebar-wrapper #compact_submenuSidebar .submenu ul.submenu-list {
+margin-bottom: 0 !important;
+}
