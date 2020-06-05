@@ -14,6 +14,7 @@
     <link href="{{ url(mix('assets/css/structure.css')) }}" rel="stylesheet" type="text/css" class="structure" />
     <link href="{{ url(mix('assets/css/perfect-scrollbar.css')) }}" rel="stylesheet">
     <link href="{{ url(mix('assets/css/fontawesome.css')) }}" rel="stylesheet">
+    <link href="{{ url(mix('assets/css/bootstrap-select.css')) }}" rel="stylesheet">
     <link href="{{ url('assets/css/apps/mailbox.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
     <link href="{{ url('assets/css/elements/breadcrumb.css') }}" rel="stylesheet" type="text/css" />
@@ -97,7 +98,7 @@
                     </div>
                     @endguest
                     <div class="dropdown-item">
-                        @can('resource', 'users-edit')
+                        @can('resource', 'users.edit')
                             <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 <span>Meu Perfil</span>
@@ -175,6 +176,8 @@
 <script src="{{ url(mix('assets/js/bootstrap.js')) }}"></script>
 <script src="{{ url(mix('assets/js/perfect-scrollbar.js')) }}"></script>
 <script src="{{ url(mix('assets/js/app.js')) }}"></script>
+<script src="{{ url(mix('assets/js/bootstrap-select.js')) }}"></script>
+
 <script>
     $(document).ready(function() {
         App.init();

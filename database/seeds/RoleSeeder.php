@@ -29,6 +29,13 @@ class RoleSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
+
+            DB::table('role_user')->insert([
+                'role_id' => 2, // usuario
+                'user_id' => 2, // usuario
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
     }
 }

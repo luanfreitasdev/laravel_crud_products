@@ -1,7 +1,7 @@
 @extends('template.cork')
 
-@section('title', 'Cadastro de Usuários')
-@section('nav_title', 'Cadastro de Usuários')
+@section('title', 'Lista de Produtos')
+@section('nav_title', 'Lista de Produtos')
 
 @push('scripts')
     <script src="{{ url(mix('assets/js/jquery.dataTables.js')) }}"></script>
@@ -51,29 +51,32 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
         <div class="widget-three">
                     <div class="widget-content widget-content-area br-6">
+                        @can('resource', 'product.create')
+                        <a href="{{ route('products.create') }}"><button class="btn btn-outline-success mb-2 btn-rounded float-left">Novo</button></a>
+                        @endcan
                         <div class="table-responsive mb-4 mt-4">
                             <table id="table" class="table table-hover" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Perfil</th>
+                                    <th>#</th>
+                                    <th>Título</th>
+                                    <th>Status</th>
                                     <th class="no-content">Ação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
+                                @foreach($products as $product)
                                     <tr>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
-                                        <td>
+                                        <td width="95"><img width="75" height="75" class="img-fluid rounded-circle" src="{{ asset('storage/img/products/'.$product->image) }}"/> </td>
+                                        <td>{{ $product->title }}</td>
+                                        <td>{!! $product->getStatus() !!}</td>
+                                        <td width="220">
                                             <div>
-                                                @can('resource', 'user.edit')
-                                                <a href="{{ route('admin.users.edit', $user->id) }}"><button class="btn btn-outline-primary mb-2 btn-rounded float-left">Editar</button></a>
+                                                @can('resource', 'product.edit')
+                                                <a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-outline-primary mb-2 btn-rounded float-left">Editar</button></a>
                                                 @endcan
-                                                    @can('resource', 'user.delete')
-                                                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="float-left">
+                                                    @can('resource', 'product.delete')
+                                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="float-left">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button TYPE="submit" class="btn btn-outline-danger mb-2 btn-rounded">Excluir</button>
@@ -86,9 +89,8 @@
 
                                 <tfoot>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Perfil</th>
+                                    <th>Título</th>
+                                    <th>Status</th>
                                     <th></th>
                                 </tr>
                                 </tfoot>

@@ -14,5 +14,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('users', 'UserController', ['except' => 'show', 'create', 'store']);
         Route::resource('roles', 'RoleController');
     });
+
+    Route::resource('products', 'ProductController');
 });
 

@@ -21,9 +21,11 @@ mix.scripts('node_modules/jquery/dist/jquery.js', 'public/assets/js/jquery.js')
     .scripts('node_modules/datatables.net-buttons/js/buttons.html5.js', 'public/assets/js/buttons.html5.js')
     .scripts('node_modules/datatables.net-buttons/js/buttons.print.js', 'public/assets/js/buttons.print.js')
     .scripts('node_modules/datatables.net-buttons/js/dataTables.buttons.js', 'public/assets/js/dataTables.buttons.js')
+    .scripts('node_modules/bootstrap-select/dist/js/bootstrap-select.js', 'public/assets/js/bootstrap-select.js')
     .version();
 
 mix.sass('node_modules/bootstrap/scss/bootstrap.scss', 'public/assets/css/bootstrap.css')
+    .styles('node_modules/bootstrap-select/dist/css/bootstrap-select.css', 'public/assets/css/bootstrap-select.css')
     .sass('node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss', 'public/assets/css/fontawesome.css')
     .styles('node_modules/select2/dist/css/select2.css', 'public/assets/css/select2.css')
     .sass('node_modules/bootstrap-select/sass/bootstrap-select.scss', 'public/assets/css/bootstrap-select.css')
